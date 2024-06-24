@@ -23,4 +23,5 @@ public class SingleBet {
     private Boolean playerTwoWinner;
     private BigDecimal winnerPoints;
     private BigDecimal loserPoints;
+    private Boolean betIsPossible;
 }

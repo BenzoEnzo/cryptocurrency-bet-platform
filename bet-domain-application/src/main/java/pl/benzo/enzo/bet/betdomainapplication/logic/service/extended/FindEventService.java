@@ -24,4 +24,11 @@ public class FindEventService {
                             .map(eventMapper::mapToDto)
                             .toList();
     }
+
+    public List<EventDTO> getAllEvents(){
+        return eventService.findAllEvents()
+                .stream()
+                .map(eventMapper::mapToDto)
+                .toList();
+    }
 }

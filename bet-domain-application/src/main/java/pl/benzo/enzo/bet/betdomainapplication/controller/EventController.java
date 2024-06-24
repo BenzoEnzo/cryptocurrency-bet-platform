@@ -20,12 +20,17 @@ public class EventController {
     private final EventFacade eventFacade;
 
     @PostMapping("")
-    public ResponseEntity<Try<CreateEventResponse>> createEvent(@RequestBody CreateEventRequest request){
+    public ResponseEntity<CreateEventResponse> createEvent(@RequestBody CreateEventRequest request){
         return new ResponseEntity<>(eventFacade.createEvent(request), HttpStatus.CREATED);
     }
 
     @GetMapping("/upcoming")
-    public ResponseEntity<Try<List<EventDTO>>> getUpcomingEvents(){
+    public ResponseEntity<List<EventDTO>> getUpcomingEvents(){
         return new ResponseEntity<>(eventFacade.findUpcomingEvents(), HttpStatus.OK);
+    }
+
+    @GetMapping("")
+    public ResponseEntity<List<EventDTO>> getAllEvents(){
+        return new ResponseEntity<>(eventFacade.findAllEvents(), HttpStatus.OK);
     }
 }

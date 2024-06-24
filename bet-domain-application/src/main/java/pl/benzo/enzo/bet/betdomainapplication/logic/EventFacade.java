@@ -25,20 +25,31 @@ public class EventFacade {
 
     private final Logger logger = LoggerFactory.getLogger(EventFacade.class);
 
-    public Try<CreateEventResponse> createEvent(CreateEventRequest request){
+    public CreateEventResponse createEvent(CreateEventRequest request){
         return Try.of(() -> {
            CreateEventResponse response = createEventService.createNewEvent(request);
            return response;
         }).onSuccess(event -> logger.info("Created event: {}", event.title()))
-                .onFailure(e -> logger.info("Failed to create event: {}", e.getMessage()));
+                .onFailure(e -> logger.info("Failed to create event: {}", e.getMessage()))
+                .get();
 
     }
 
-    public Try<List<EventDTO>> findUpcomingEvents(){
+    public List<EventDTO> findUpcomingEvents(){
         return Try.of(() -> {
             List<EventDTO> response = findEventService.getUpcomingEvents();
             return response;
         }).onSuccess(events -> logger.info("Number of upcoming events: {}", events.size()))
-                .onFailure(e -> logger.info("Failed to fetch upcoming events: {}", e.getMessage()));
+                .onFailure(e -> logger.info("Failed to fetch upcoming events: {}", e.getMessage()))
+                .get();
+    }
+
+    public List<EventDTO> findAllEvents(){
+        return Try.of(() -> {
+                    List<EventDTO> response = findEventService.getAllEvents();
+                    return response;
+                }).onSuccess(events -> logger.info("Number of events: {}", events.size()))
+                .onFailure(e -> logger.info("Failed to fetch events: {}", e.getMessage()))
+                .get();
     }
 }

@@ -17,6 +17,5 @@ public class Market {
     @Id
     private String marketId;
     private BigDecimal odds;
-    private String choice;
     private LocalDateTime date;
 }

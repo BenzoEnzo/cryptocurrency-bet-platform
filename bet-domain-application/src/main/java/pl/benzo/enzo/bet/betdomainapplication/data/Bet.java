@@ -1,4 +1,4 @@
-package pl.benzo.enzo.bet.betdomainapplication.model;
+package pl.benzo.enzo.bet.betdomainapplication.data;
 
 
 import lombok.Getter;

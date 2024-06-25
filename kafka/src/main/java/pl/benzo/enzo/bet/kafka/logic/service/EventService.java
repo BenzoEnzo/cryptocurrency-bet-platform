@@ -2,14 +2,13 @@ package pl.benzo.enzo.bet.kafka.logic.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.benzo.enzo.bet.kafka.database.Event;
-import pl.benzo.enzo.bet.kafka.database.EventRepository;
+import pl.benzo.enzo.bet.kafka.data.Event;
+import pl.benzo.enzo.bet.kafka.data.EventRepository;
 import pl.benzo.enzo.bet.platformlibrary.model.enumerated.Status;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor

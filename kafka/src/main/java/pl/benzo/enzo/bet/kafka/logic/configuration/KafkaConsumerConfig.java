@@ -27,7 +27,7 @@ public class KafkaConsumerConfig {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ErrorHandlingDeserializer.class.getName());
         props.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class.getName());
         props.put(ErrorHandlingDeserializer.KEY_DESERIALIZER_CLASS, StringDeserializer.class.getName());
-        props.put(JsonDeserializer.TRUSTED_PACKAGES, "pl.benzo.enzo.bet.platformlibrary.model,java.util,java.lang");
+        props.put(JsonDeserializer.TRUSTED_PACKAGES, "pl.benzo.enzo.bet.platformlibrary.data,java.util,java.lang");
         return props;
     }
 

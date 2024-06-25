@@ -1,6 +1,5 @@
-package pl.benzo.enzo.bet.platformserver.web;
+package pl.benzo.enzo.bet.platformserver.logic;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;

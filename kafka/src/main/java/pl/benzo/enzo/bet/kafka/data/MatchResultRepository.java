@@ -1,4 +1,4 @@
-package pl.benzo.enzo.bet.kafka.database;
+package pl.benzo.enzo.bet.kafka.data;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

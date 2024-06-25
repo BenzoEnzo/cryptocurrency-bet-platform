@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import pl.benzo.enzo.bet.kafka.database.Event;
+import pl.benzo.enzo.bet.kafka.data.Event;
 import pl.benzo.enzo.bet.kafka.logic.service.EventService;
 import pl.benzo.enzo.bet.platformlibrary.model.enumerated.Status;
 

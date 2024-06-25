@@ -1,4 +1,4 @@
-package pl.benzo.enzo.bet.platformserver.web;
+package pl.benzo.enzo.bet.platformserver.logic;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;

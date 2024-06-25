@@ -1,4 +1,4 @@
-package pl.benzo.enzo.bet.kafka.database;
+package pl.benzo.enzo.bet.kafka.data;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

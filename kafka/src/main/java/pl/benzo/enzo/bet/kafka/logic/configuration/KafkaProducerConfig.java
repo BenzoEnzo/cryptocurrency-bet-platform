@@ -1,4 +1,4 @@
-package pl.benzo.enzo.bet.kafka.logic.service;
+package pl.benzo.enzo.bet.kafka.logic.configuration;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -9,7 +9,6 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
-import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import pl.benzo.enzo.bet.kafka.database.MatchResult;
+import pl.benzo.enzo.bet.kafka.data.MatchResult;
 import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
 import pl.benzo.enzo.bet.platformlibrary.model.enumerated.BetStatus;
 import pl.benzo.enzo.bet.platformlibrary.model.enumerated.Status;

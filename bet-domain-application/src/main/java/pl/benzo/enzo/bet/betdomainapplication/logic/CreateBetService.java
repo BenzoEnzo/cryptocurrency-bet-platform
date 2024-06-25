@@ -2,8 +2,8 @@ package pl.benzo.enzo.bet.betdomainapplication.logic;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.benzo.enzo.bet.betdomainapplication.model.Bet;
-import pl.benzo.enzo.bet.betdomainapplication.model.BetRepository;
+import pl.benzo.enzo.bet.betdomainapplication.data.Bet;
+import pl.benzo.enzo.bet.betdomainapplication.data.mapper.BetMapper;
 import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
 
 @Service

@@ -1,4 +1,4 @@
-package pl.benzo.enzo.bet.kafka.database;
+package pl.benzo.enzo.bet.kafka.data;
 
 import org.springframework.data.annotation.Id;
 import lombok.Getter;

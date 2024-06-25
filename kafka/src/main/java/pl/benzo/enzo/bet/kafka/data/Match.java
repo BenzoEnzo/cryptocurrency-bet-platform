@@ -1,4 +1,5 @@
-package pl.benzo.enzo.bet.kafka.database;
+package pl.benzo.enzo.bet.kafka.data;
+
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -6,13 +7,14 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "matchResults")
+@Document(collection = "matches")
 @NoArgsConstructor
 @Getter
 @Setter
-public class MatchResult {
+public class Match {
     @Id
-    private String matchResultId;
-    private Event event;
-    private Match match;
+    private String matchId;
+    private String name;
+    private Actor winner;
+    private Actor loser;
 }

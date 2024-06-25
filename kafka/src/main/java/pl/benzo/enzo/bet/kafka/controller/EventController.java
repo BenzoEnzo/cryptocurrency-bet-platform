@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.benzo.enzo.bet.kafka.database.Event;
-import pl.benzo.enzo.bet.kafka.database.MatchResult;
+import pl.benzo.enzo.bet.kafka.data.Event;
+import pl.benzo.enzo.bet.kafka.data.MatchResult;
 import pl.benzo.enzo.bet.kafka.logic.service.EventService;
 import pl.benzo.enzo.bet.kafka.logic.service.MatchResultService;
 

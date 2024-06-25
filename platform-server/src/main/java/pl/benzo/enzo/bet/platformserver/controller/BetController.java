@@ -6,9 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.benzo.enzo.bet.platformlibrary.client.BetDomainClient;
 import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
-import pl.benzo.enzo.bet.platformserver.web.KafkaProducerService;
-
-import java.util.List;
+import pl.benzo.enzo.bet.platformserver.logic.KafkaProducerService;
 
 @RestController
 @RequestMapping("/api/bets")

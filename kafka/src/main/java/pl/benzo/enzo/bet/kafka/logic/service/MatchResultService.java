@@ -3,7 +3,7 @@ package pl.benzo.enzo.bet.kafka.logic.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.benzo.enzo.bet.kafka.data.MatchResult;
-import pl.benzo.enzo.bet.kafka.data.MatchResultRepository;
+import pl.benzo.enzo.bet.kafka.data.repository.MatchResultRepository;
 import pl.benzo.enzo.bet.platformlibrary.model.enumerated.Status;
 
 import java.util.List;

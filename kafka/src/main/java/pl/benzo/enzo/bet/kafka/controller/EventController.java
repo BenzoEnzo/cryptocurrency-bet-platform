@@ -8,6 +8,7 @@ import pl.benzo.enzo.bet.kafka.data.Event;
 import pl.benzo.enzo.bet.kafka.data.MatchResult;
 import pl.benzo.enzo.bet.kafka.logic.service.EventService;
 import pl.benzo.enzo.bet.kafka.logic.service.MatchResultService;
+import pl.benzo.enzo.bet.platformlibrary.model.MmaEventDTO;
 
 import java.util.List;
 
@@ -35,9 +36,16 @@ public class EventController {
         matchResultService.saveMatchResult(matchResult);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
     @DeleteMapping("")
     public ResponseEntity<Void> deleteAll(){
         eventService.deleteAll();
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping("/mma")
+    public ResponseEntity<List<Event>> getAll(@RequestBody List<MmaEventDTO> mmaEvents){
+        eventService.saveAll(mmaEvents);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

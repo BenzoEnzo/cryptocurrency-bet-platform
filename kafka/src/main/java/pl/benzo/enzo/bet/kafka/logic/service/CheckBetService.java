@@ -47,7 +47,6 @@ public class CheckBetService {
                         if (partialBet.getWinnerId().equals(winner)) {
                             partialBet.setBetStatus(BetStatus.WON);
                             partialBet.getEvent().setStatus(Status.FINISHED);
-                            bet.setCountPartialBets(bet.getPartialBets().size());
                             bet.addWinRatio();
                             logg.info("Bet {} won! Bet owner: {}", bet.getBetId(), bet.getUser().getMail());
                         } else {

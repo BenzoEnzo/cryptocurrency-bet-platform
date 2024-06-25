@@ -8,7 +8,7 @@ import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
 
 @Service
 @RequiredArgsConstructor
-public class CreateBetService {
+public class CreationBetService {
     private final BetService betService;
     private final BetMapper betMapper;
     public BetDTO saveNewBet(BetDTO request){

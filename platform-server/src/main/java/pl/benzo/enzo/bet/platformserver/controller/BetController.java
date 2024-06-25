@@ -4,19 +4,19 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.benzo.enzo.bet.platformlibrary.client.BetDomainClient;
 import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
-import pl.benzo.enzo.bet.platformserver.logic.KafkaProducerService;
+import pl.benzo.enzo.bet.platformserver.logic.BetCreationService;
 
 @RestController
 @RequestMapping("/api/bets")
 @RequiredArgsConstructor
 public class BetController {
-    private final BetDomainClient betDomainClient;
-    private final KafkaProducerService kafkaProducerService;
+        private final BetCreationService betCreationService;
+
     @PostMapping("")
-    public ResponseEntity<BetDTO> saveBet(@RequestBody BetDTO request){
-        kafkaProducerService.sendBetToKafka("created-user-bets",request);
-        return new ResponseEntity<>(betDomainClient.saveBet(request), HttpStatus.CREATED);
+    public ResponseEntity<Void> saveBet(@RequestBody BetDTO request){
+        betCreationService.createBet(request);
+
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
 
 @FeignClient(name = "bet-domain-application", url ="http://localhost:8091")
-public interface BetDomainClient {
+public interface BetClient {
     @RequestMapping(method = RequestMethod.POST, value ="/api/bets")
     BetDTO saveBet(@RequestBody BetDTO request);
 }

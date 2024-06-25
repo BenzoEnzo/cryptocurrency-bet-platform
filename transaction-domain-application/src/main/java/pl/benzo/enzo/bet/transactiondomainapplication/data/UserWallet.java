@@ -1,14 +1,12 @@
 package pl.benzo.enzo.bet.transactiondomainapplication.data;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -21,5 +19,6 @@ public class UserWallet {
     private String userId;
     private BigDecimal moneros;
     private String walletAddress;
-
+    @OneToMany(mappedBy = "userWallet")
+    private List<UserTransaction> historyTransactions;
 }

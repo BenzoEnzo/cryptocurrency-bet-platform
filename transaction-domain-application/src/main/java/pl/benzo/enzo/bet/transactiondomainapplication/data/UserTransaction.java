@@ -1,9 +1,6 @@
 package pl.benzo.enzo.bet.transactiondomainapplication.data;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,5 +23,8 @@ public class UserTransaction {
     private TransactionStatus transactionStatus;
     private LocalDateTime createdAt;
     private String betId;
+    @ManyToOne
+    @JoinColumn(name = "user_wallet_id")
+    private UserWallet userWallet;
 
 }

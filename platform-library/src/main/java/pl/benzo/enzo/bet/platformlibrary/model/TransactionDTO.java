@@ -16,4 +16,6 @@ public class TransactionDTO {
     BigDecimal prizeToWin;
     String ownerXmrAddress;
     String sendToXmrAddress;
+    String betId;
+    Boolean approveTransaction;
 }

@@ -12,5 +12,6 @@ import java.util.Set;
 public interface EventRepository extends MongoRepository<Event,String> {
     List<Event> findAllByStatus(Status status);
     Optional<Event> findEventByEventId(String eventId);
+    List<Event> findEventsByDeprecateIsFalse();
 
 }

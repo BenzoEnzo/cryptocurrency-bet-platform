@@ -21,10 +21,12 @@ public class EventService {
     }
 
     public List<Event> findAllEvents(){
-        return eventRepository.findAll();
+        return eventRepository.findEventsByDeprecateIsFalse();
     }
 
-
+    public void deleteAll(){
+        eventRepository.deleteAll();
+    }
     public List<Event> findAllEventsByStatus(Status status){
         return eventRepository.findAllByStatus(status);
     }

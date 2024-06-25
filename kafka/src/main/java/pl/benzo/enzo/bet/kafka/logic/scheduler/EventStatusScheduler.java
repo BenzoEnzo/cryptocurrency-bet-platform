@@ -68,6 +68,7 @@ public class EventStatusScheduler {
         } else {
             for (Event event : finishedEvents) {
                 event.setStatus(Status.FINISHED);
+                event.setDeprecate(true);
                 eventService.saveEvent(event);
 
                 kafkaTemplate.send("finished-events",event.getEventId());

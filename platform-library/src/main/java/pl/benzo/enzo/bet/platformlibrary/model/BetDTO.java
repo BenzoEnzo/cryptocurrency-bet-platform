@@ -19,9 +19,20 @@ public class BetDTO {
     UserDTO user;
     TransactionDTO transaction;
     List<PartialBetDTO> partialBets;
+    Integer countPartialBets = 0;
+    Integer winRatio = 0;
     LocalDateTime createdAt;
-    LocalDateTime finishedAt;
-    Status status;
-    BetStatus betStatus;
+    Status finalStatus;
+    BetStatus finalBetStatus;
 public BetDTO(){}
+
+    public void addWinRatio(){
+    this.winRatio+=1;
+
+    if((winRatio.equals(countPartialBets) && !winRatio.equals(0))){
+        this.finalStatus = Status.FINISHED;
+        this.finalBetStatus = BetStatus.WON;
+    }
+
+    }
 }

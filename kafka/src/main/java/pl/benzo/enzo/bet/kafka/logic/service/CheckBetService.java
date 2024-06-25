@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import pl.benzo.enzo.bet.kafka.database.MatchResult;
 import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
 import pl.benzo.enzo.bet.platformlibrary.model.enumerated.BetStatus;
+import pl.benzo.enzo.bet.platformlibrary.model.enumerated.Status;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -46,9 +46,15 @@ public class CheckBetService {
                     .forEach(partialBet -> {
                         if (partialBet.getWinnerId().equals(winner)) {
                             partialBet.setBetStatus(BetStatus.WON);
+                            partialBet.getEvent().setStatus(Status.FINISHED);
+                            bet.setCountPartialBets(bet.getPartialBets().size());
+                            bet.addWinRatio();
                             logg.info("Bet {} won! Bet owner: {}", bet.getBetId(), bet.getUser().getMail());
                         } else {
                             partialBet.setBetStatus(BetStatus.LOST);
+                            partialBet.getEvent().setStatus(Status.FINISHED);
+                            bet.setFinalBetStatus(BetStatus.LOST);
+                            bet.setFinalStatus(Status.FINISHED);
                             logg.info("Bet {} lost. Bet owner: {}", bet.getBetId(), bet.getUser().getMail());
                         }
                     });

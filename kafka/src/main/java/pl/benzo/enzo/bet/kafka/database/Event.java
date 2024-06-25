@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import pl.benzo.enzo.bet.platformlibrary.model.enumerated.Category;
 import pl.benzo.enzo.bet.platformlibrary.model.enumerated.Status;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 public class Event {
     @Id
+    @Indexed(unique = true)
     private String eventId;
     private String title;
     private LocalDateTime startTime;

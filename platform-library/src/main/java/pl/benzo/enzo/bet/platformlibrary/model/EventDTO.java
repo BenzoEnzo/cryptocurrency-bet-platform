@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EventDTO {
-    String eventId;
+    private String eventId;
     private String title;
     private LocalDateTime startTime;
     private LocalDateTime endTime;

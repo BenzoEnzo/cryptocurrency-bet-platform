@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.benzo.enzo.bet.betdomainapplication.data.Bet;
 import pl.benzo.enzo.bet.betdomainapplication.data.PartialBet;
+import pl.benzo.enzo.bet.platformlibrary.mapper.BaseMapper;
 import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
 import pl.benzo.enzo.bet.platformlibrary.model.PartialBetDTO;
 import pl.benzo.enzo.bet.platformlibrary.model.TransactionDTO;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class BetMapper {
+public class BetMapper  {
     private final PartialBetMapper partialBetMapper;
     public void mapToEntity(Bet bet, BetDTO betDTO){
         List<PartialBet> partialBetList = betDTO.getPartialBets().stream().map(g -> {

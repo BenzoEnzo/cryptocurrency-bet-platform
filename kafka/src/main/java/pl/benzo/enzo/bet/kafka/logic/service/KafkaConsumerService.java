@@ -8,9 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import pl.benzo.enzo.bet.kafka.data.Event;
-import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
-import pl.benzo.enzo.bet.platformlibrary.model.PartialBetDTO;
+import pl.benzo.enzo.bet.kafka.server.data.Event;
+import pl.benzo.enzo.bet.kafka.server.service.EventService;
+import pl.benzo.enzo.bet.platformlibrary.model.bet.BetDTO;
+import pl.benzo.enzo.bet.platformlibrary.model.bet.PartialBetDTO;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -10,7 +10,7 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.support.serializer.ErrorHandlingDeserializer;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
-import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
+import pl.benzo.enzo.bet.platformlibrary.model.bet.BetDTO;
 import pl.benzo.enzo.bet.platformlibrary.model.TransactionDTO;
 
 import java.util.HashMap;

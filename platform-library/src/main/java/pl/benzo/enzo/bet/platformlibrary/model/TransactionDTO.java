@@ -1,6 +1,7 @@
 package pl.benzo.enzo.bet.platformlibrary.model;
 
 import lombok.*;
+import pl.benzo.enzo.bet.platformlibrary.model.transaction.UserTransactionDTO;
 
 import java.math.BigDecimal;
 
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionDTO {
+    UserTransactionDTO userTransactionDTO;
     String userId;
     String transactionId;
     BigDecimal price;

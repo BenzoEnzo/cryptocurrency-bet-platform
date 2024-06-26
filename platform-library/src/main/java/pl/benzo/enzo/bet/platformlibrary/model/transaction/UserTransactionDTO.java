@@ -1,22 +1,17 @@
-package pl.benzo.enzo.bet.transactiondomainapplication.data;
+package pl.benzo.enzo.bet.platformlibrary.model.transaction;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.benzo.enzo.bet.platformlibrary.model.enumerated.TransactionStatus;
 
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Entity
-@NoArgsConstructor
 @Getter
 @Setter
-public class UserTransaction {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+@NoArgsConstructor
+public class UserTransactionDTO {
     private Long id;
     private String userId;
     private BigDecimal moneros;
@@ -25,8 +20,4 @@ public class UserTransaction {
     private LocalDateTime createdAt;
     private String betId;
     private boolean deprecate;
-    @ManyToOne
-    @JoinColumn(name = "user_wallet_id")
-    private UserWallet userWallet;
-
 }

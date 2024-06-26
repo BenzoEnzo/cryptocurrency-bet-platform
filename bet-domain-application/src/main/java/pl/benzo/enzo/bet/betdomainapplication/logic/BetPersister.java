@@ -6,8 +6,8 @@ import pl.benzo.enzo.bet.betdomainapplication.data.Bet;
 import pl.benzo.enzo.bet.betdomainapplication.data.CompletedBet;
 import pl.benzo.enzo.bet.betdomainapplication.data.mapper.BetMapper;
 import pl.benzo.enzo.bet.betdomainapplication.data.mapper.CompletedBetMapper;
-import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
-import pl.benzo.enzo.bet.platformlibrary.model.CompletedBetDTO;
+import pl.benzo.enzo.bet.platformlibrary.model.bet.BetDTO;
+import pl.benzo.enzo.bet.platformlibrary.model.bet.CompletedBetDTO;
 
 @Service
 @RequiredArgsConstructor

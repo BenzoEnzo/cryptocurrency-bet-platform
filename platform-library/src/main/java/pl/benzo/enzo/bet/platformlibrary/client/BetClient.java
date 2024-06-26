@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.benzo.enzo.bet.platformlibrary.model.BetDTO;
+import pl.benzo.enzo.bet.platformlibrary.model.bet.BetDTO;
 
 @FeignClient(name = "bet-domain-application", url ="http://localhost:8091")
 public interface BetClient {

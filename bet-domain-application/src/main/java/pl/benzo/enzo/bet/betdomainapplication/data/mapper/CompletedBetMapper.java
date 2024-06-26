@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.benzo.enzo.bet.betdomainapplication.data.Bet;
 import pl.benzo.enzo.bet.betdomainapplication.data.CompletedBet;
-import pl.benzo.enzo.bet.platformlibrary.mapper.BaseMapper;
-import pl.benzo.enzo.bet.platformlibrary.model.CompletedBetDTO;
+import pl.benzo.enzo.bet.platformlibrary.base.BaseMapper;
+import pl.benzo.enzo.bet.platformlibrary.model.bet.CompletedBetDTO;
 
 import java.time.LocalDateTime;
 

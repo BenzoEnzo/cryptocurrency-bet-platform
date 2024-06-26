@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.benzo.enzo.bet.betdomainapplication.data.PartialBet;
 import pl.benzo.enzo.bet.platformlibrary.model.EventDTO;
-import pl.benzo.enzo.bet.platformlibrary.model.PartialBetDTO;
+import pl.benzo.enzo.bet.platformlibrary.model.bet.PartialBetDTO;
 
 @Component
 @RequiredArgsConstructor

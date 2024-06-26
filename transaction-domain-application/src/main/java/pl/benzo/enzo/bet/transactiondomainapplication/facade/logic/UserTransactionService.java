@@ -1,4 +1,4 @@
-package pl.benzo.enzo.bet.transactiondomainapplication.logic;
+package pl.benzo.enzo.bet.transactiondomainapplication.facade.logic;
 
 
 import lombok.RequiredArgsConstructor;

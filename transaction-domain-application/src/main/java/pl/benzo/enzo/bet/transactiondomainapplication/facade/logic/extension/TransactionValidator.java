@@ -1,4 +1,4 @@
-package pl.benzo.enzo.bet.transactiondomainapplication.logic.extension;
+package pl.benzo.enzo.bet.transactiondomainapplication.facade.logic.extension;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,15 +9,15 @@ import pl.benzo.enzo.bet.platformlibrary.model.TransactionDTO;
 import pl.benzo.enzo.bet.transactiondomainapplication.data.UserTransaction;
 import pl.benzo.enzo.bet.transactiondomainapplication.data.UserWallet;
 import pl.benzo.enzo.bet.transactiondomainapplication.data.mapper.UserTransactionMapper;
-import pl.benzo.enzo.bet.transactiondomainapplication.logic.UserTransactionService;
-import pl.benzo.enzo.bet.transactiondomainapplication.logic.UserWalletService;
+import pl.benzo.enzo.bet.transactiondomainapplication.facade.logic.UserTransactionService;
+import pl.benzo.enzo.bet.transactiondomainapplication.facade.logic.UserWalletService;
 
 import java.math.BigDecimal;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class UserTransactionValidate {
+public class TransactionValidator {
 
     private final UserTransactionMapper userTransactionMapper;
     private final UserWalletService userWalletService;

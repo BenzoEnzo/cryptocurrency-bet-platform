@@ -5,4 +5,5 @@ import pl.benzo.enzo.bet.platformlibrary.model.TransactionDTO;
 
 public interface TransactionDomainFacade {
     ResponseEntity<TransactionDTO> compareOperationWithBalance(TransactionDTO request);
+    ResponseEntity<TransactionDTO> saveTransaction(TransactionDTO request);
 }

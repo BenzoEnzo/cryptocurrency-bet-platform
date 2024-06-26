@@ -16,7 +16,12 @@ public class TransactionDomainController {
     private final TransactionDomainFacade transactionDomainFacade;
 
     @PostMapping("")
-    public ResponseEntity<TransactionDTO> sendTransaction(@RequestBody TransactionDTO request){
+    public ResponseEntity<TransactionDTO> validateTransactionAccountBalance(@RequestBody TransactionDTO request){
         return transactionDomainFacade.compareOperationWithBalance(request);
+    }
+
+    @PostMapping("")
+    public ResponseEntity<TransactionDTO> saveTransaction(@RequestBody TransactionDTO request){
+        return transactionDomainFacade.saveTransaction(request);
     }
 }

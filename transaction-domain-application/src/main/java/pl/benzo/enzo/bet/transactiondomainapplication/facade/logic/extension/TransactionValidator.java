@@ -1,5 +1,4 @@
-package pl.benzo.enzo.bet.transactiondomainapplication.logic;
-
+package pl.benzo.enzo.bet.transactiondomainapplication.facade.logic.extension;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,20 +9,21 @@ import pl.benzo.enzo.bet.platformlibrary.model.TransactionDTO;
 import pl.benzo.enzo.bet.transactiondomainapplication.data.UserTransaction;
 import pl.benzo.enzo.bet.transactiondomainapplication.data.UserWallet;
 import pl.benzo.enzo.bet.transactiondomainapplication.data.mapper.UserTransactionMapper;
-import pl.benzo.enzo.bet.transactiondomainapplication.data.repository.UserTransactionRepository;
+import pl.benzo.enzo.bet.transactiondomainapplication.facade.logic.UserTransactionService;
+import pl.benzo.enzo.bet.transactiondomainapplication.facade.logic.UserWalletService;
 
 import java.math.BigDecimal;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class UserTransactionService {
-    private final UserTransactionRepository userTransactionRepository;
+public class TransactionValidator {
+
     private final UserTransactionMapper userTransactionMapper;
     private final UserWalletService userWalletService;
     private final Logger logger = LoggerFactory.getLogger(UserTransactionService.class);
 
-    public TransactionDTO sendTransaction(TransactionDTO transactionDTO){
+    public TransactionDTO compareOperationWithBalance(TransactionDTO transactionDTO){
         UserTransaction userTransaction = new UserTransaction();
 
         userTransactionMapper.mapToEntity(userTransaction,transactionDTO);
@@ -37,12 +37,10 @@ public class UserTransactionService {
 
         BigDecimal accountBalance = userWallet.getMoneros();
 
-        if(transactionDTO.getPrice().subtract(accountBalance).compareTo(BigDecimal.ZERO) < 0){
+        if(accountBalance.subtract(transactionDTO.getPrice()).compareTo(BigDecimal.ZERO) < 0){
             logger.info("User dont have enough money in wallet");
             return null;
         }
-
-        userTransactionRepository.save(userTransaction);
 
         TransactionDTO response = userTransactionMapper.mapToDTO(userTransaction);
         response.setApproveTransaction(true);

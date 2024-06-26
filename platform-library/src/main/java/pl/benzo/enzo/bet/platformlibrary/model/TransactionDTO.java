@@ -18,4 +18,5 @@ public class TransactionDTO {
     String sendToXmrAddress;
     String betId;
     Boolean approveTransaction;
+    BigDecimal afterTransactionBalance;
 }

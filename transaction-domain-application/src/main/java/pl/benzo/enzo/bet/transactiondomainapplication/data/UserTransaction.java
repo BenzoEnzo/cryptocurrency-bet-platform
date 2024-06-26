@@ -23,6 +23,7 @@ public class UserTransaction {
     private TransactionStatus transactionStatus;
     private LocalDateTime createdAt;
     private String betId;
+    private boolean deprecate;
     @ManyToOne
     @JoinColumn(name = "user_wallet_id")
     private UserWallet userWallet;
